@@ -1,9 +1,5 @@
-import "./styles/style.scss";
+import { render } from 'react-dom';
+import App from './components/App'
 
-const person = {
-  name: 'Bob',
-  age: 44,
-  sex: 'M'
-}
 
-console.log(person);
+render(<App/>, document.querySelector('#root'));
