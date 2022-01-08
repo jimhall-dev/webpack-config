@@ -1,0 +1,22 @@
+.hero {
+  background-color: dodgerblue;
+  background-image: url("../images/city.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    margin: 8rem 0;
+    color: white;
+    opacity: 0.5;
+    color: white;
+    text-transform: uppercase;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-size: 12rem;
+  }
+}

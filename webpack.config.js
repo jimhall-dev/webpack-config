@@ -11,6 +11,9 @@ if (process.env.NODE_ENV === "production") {
 module.exports = {
   mode: mode,
   target:target,
+  output: {
+    assetModuleFilename: "images/[hash][ext][query]"
+  },
   resolve: {
     extensions: ['.js', '.jsx']
   },
@@ -31,7 +34,23 @@ module.exports = {
       },
       {
         test: /\.(s[ac]|c)ss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {publicPath: ""}
+          },
+          'css-loader',
+          'postcss-loader',
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        type: 'asset/resource'
+      },
+      {
+        test: /\.svg$/i,
+        type: 'asset/inline',
       }
     ]
   },
